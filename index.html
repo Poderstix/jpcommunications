@@ -462,93 +462,241 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
   .hip-items{gap:.5rem}
 }
 
-  /* ═══ GREEN/WHITE/BLACK COLOR THEME OVERRIDE ═══ */
+  /* ═══ LIGHT CORPORATE THEME — Green / Black / White ═══ */
   :root {
-    --accent: #00c853;
-    --accent-light: #69f0ae;
-    --accent-dark: #00a844;
-    --bg-deep: #040904;
-    --bg-dark: #071209;
-    --bg-mid: #0a1a0a;
+    --green: #00a651;
+    --green-dark: #007a3a;
+    --green-light: #e8f5ee;
+    --black: #0d1a0d;
+    --text: #1a1a1a;
+    --text-muted: #555555;
+    --text-light: #888888;
+    --bg: #ffffff;
+    --bg-alt: #f7faf8;
+    --bg-dark: #0d1a0d;
+    --border: #e0ede6;
+    --border-green: rgba(0,166,81,.25);
   }
 
-  body { background: var(--bg-deep) !important; }
+  /* ── Base ── */
+  body {
+    background: #ffffff !important;
+    color: var(--text) !important;
+  }
 
-  /* Backgrounds */
-  header, nav { background: linear-gradient(180deg, rgba(4,9,4,.97) 0%, rgba(4,9,4,0) 100%) !important; }
-  section { background: var(--bg-deep) !important; }
-  section:nth-child(even) { background: var(--bg-dark) !important; }
-  footer { background: #020602 !important; }
+  /* ── Nav ── */
+  header {
+    background: rgba(255,255,255,.97) !important;
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: 0 1px 12px rgba(0,0,0,.06) !important;
+  }
+  nav a { color: var(--text) !important; }
+  nav a:hover { color: var(--green) !important; }
+  .nav-cta {
+    background: var(--green) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--green-dark) !important; }
 
-  /* Hero */
-  .hero { background: linear-gradient(135deg, #030a03 0%, #071a0a 40%, #041008 70%, #030a03 100%) !important; }
-  .hero::before { background: radial-gradient(ellipse at 30% 50%, rgba(0,200,83,.08) 0%, transparent 60%) !important; }
+  /* ── Hero — keep dark for drama, but make text crisp ── */
+  .hero {
+    background: linear-gradient(135deg, #071a0a 0%, #0d2e12 45%, #071a0a 100%) !important;
+    position: relative;
+  }
+  .hero::before {
+    background: radial-gradient(ellipse at 30% 50%, rgba(0,166,81,.12) 0%, transparent 65%) !important;
+  }
+  .hero-title { color: #ffffff !important; text-shadow: 0 2px 20px rgba(0,0,0,.4) !important; }
+  .hero-sub { color: rgba(255,255,255,.85) !important; }
+  .hero-eyebrow { color: rgba(255,255,255,.7) !important; }
+  .hero-eyebrow-dot { background: var(--green) !important; }
 
-  /* Accent colors */
-  .hero-eyebrow-dot, .pulse-ring { background: var(--accent) !important; }
-  .hero-eyebrow { color: rgba(255,255,255,.55) !important; }
+  /* Hero cards on dark bg */
+  .hcard {
+    background: rgba(255,255,255,.07) !important;
+    border-color: rgba(255,255,255,.12) !important;
+  }
+  .hcard:hover {
+    background: rgba(0,166,81,.15) !important;
+    border-color: rgba(0,166,81,.4) !important;
+  }
+  .hcard-icon.blue, .hcard-icon.gold, .hcard-icon.green {
+    background: rgba(0,166,81,.2) !important;
+  }
+  .hcard-title, .hcard p { color: rgba(255,255,255,.9) !important; }
+  .hcard-arrow { color: var(--green) !important; }
 
-  /* Platform cards */
-  .platform-top.ttw { background: linear-gradient(135deg, #0d3320, #071a0a) !important; }
-  .platform-top.mfr { background: linear-gradient(135deg, #1a4a15, #0a280a) !important; }
-  .platform-top.ats { background: linear-gradient(135deg, #1f4f10, #0d2a08) !important; }
+  /* ── All other sections: WHITE background ── */
+  section:not(.hero) {
+    background: #ffffff !important;
+  }
+  section:not(.hero):nth-of-type(even) {
+    background: var(--bg-alt) !important;
+  }
+  #about { background: var(--bg-alt) !important; }
+  #platforms { background: #ffffff !important; }
+  #tradeshows { background: var(--bg-alt) !important; }
+  #video { background: #ffffff !important; }
+  #services { background: var(--bg-alt) !important; }
+  #books { background: #ffffff !important; }
+  #testimonials { background: var(--bg-alt) !important; }
+  #leadership { background: #ffffff !important; }
+  #press { background: var(--bg-alt) !important; }
+  #partners { background: #ffffff !important; }
+  #contact { background: var(--bg-alt) !important; }
 
-  /* Tags */
-  .tag { background: rgba(0,200,83,.1) !important; color: var(--accent) !important; border-color: rgba(0,200,83,.2) !important; }
+  /* ── Section text on light backgrounds ── */
+  section:not(.hero) h2,
+  section:not(.hero) h3,
+  section:not(.hero) h4,
+  section:not(.hero) h5,
+  .section-title { color: var(--black) !important; }
 
-  /* Stats numbers */
-  .num { color: var(--accent) !important; }
+  section:not(.hero) p,
+  section:not(.hero) li,
+  .section-sub,
+  .book-author { color: var(--text-muted) !important; }
 
-  /* Timeline */
-  .timeline-year { color: var(--accent-light) !important; }
-  .timeline-item::before { background: var(--accent) !important; }
-  .timeline-line { background: linear-gradient(to bottom, transparent, var(--accent), transparent) !important; }
+  .section-label,
+  .section-eyebrow,
+  [style*="color:#00c853"],
+  [style*="color: #00c853"] { color: var(--green) !important; }
 
-  /* Nav links */
-  nav a:hover { color: var(--accent) !important; }
-  .nav-cta { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; }
-  .nav-cta:hover { background: var(--accent-light) !important; }
+  .divider { background: var(--green) !important; }
 
-  /* Hero cards */
-  .hcard { background: rgba(0,200,83,.06) !important; border-color: rgba(0,200,83,.15) !important; }
-  .hcard:hover { background: rgba(0,200,83,.12) !important; border-color: rgba(0,200,83,.3) !important; }
-  .hcard-icon.blue, .hcard-icon.gold, .hcard-icon.green { background: rgba(0,200,83,.15) !important; color: var(--accent) !important; }
-  .hcard-arrow { color: var(--accent) !important; }
+  /* ── Stats ── */
+  .stat-num, .num { color: var(--green) !important; }
+  .stat-label, .label { color: var(--text-muted) !important; }
+  .stat-card { background: #fff !important; border: 1px solid var(--border) !important; box-shadow: 0 2px 12px rgba(0,0,0,.06) !important; }
 
-  /* Buttons */
-  .btn-primary { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; }
-  .btn-primary:hover { background: var(--accent-light) !important; }
-  .btn-outline { border-color: var(--accent) !important; color: var(--accent) !important; }
-  .btn-outline:hover { background: var(--accent) !important; color: #000 !important; }
+  /* ── Platform cards ── */
+  .platform-card {
+    background: #ffffff !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,.06) !important;
+  }
+  .platform-card:hover {
+    border-color: var(--green) !important;
+    box-shadow: 0 8px 32px rgba(0,166,81,.12) !important;
+  }
+  .platform-top.ttw { background: linear-gradient(135deg, #0d2e12, #071a0a) !important; }
+  .platform-top.mfr { background: linear-gradient(135deg, #1a3d12, #0a2408) !important; }
+  .platform-top.ats { background: linear-gradient(135deg, #0d3d1a, #07250e) !important; }
+  .tag {
+    background: var(--green-light) !important;
+    color: var(--green-dark) !important;
+    border-color: var(--border-green) !important;
+  }
 
-  /* Section eyebrows */
-  .section-eyebrow, [style*="color:#4f8ef7"], [style*="color: #4f8ef7"] { color: var(--accent) !important; }
+  /* ── Timeline ── */
+  .timeline-year { color: var(--green) !important; font-weight: 800 !important; }
+  .timeline-item::before { background: var(--green) !important; }
+  .timeline-line { background: linear-gradient(to bottom, transparent, var(--green), transparent) !important; }
+  .timeline-text h5 { color: var(--black) !important; }
+  .timeline-text p { color: var(--text-muted) !important; }
 
-  /* Cards and boxes */
-  .platform-card { background: rgba(0,200,83,.04) !important; border-color: rgba(0,200,83,.1) !important; }
-  .platform-card:hover { border-color: rgba(0,200,83,.3) !important; box-shadow: 0 0 30px rgba(0,200,83,.08) !important; }
+  /* ── Show cards ── */
+  .show-card {
+    background: #ffffff !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05) !important;
+  }
+  .show-card:hover { border-color: var(--green) !important; }
+  .show-card h3 { color: var(--black) !important; }
+  .show-card p { color: var(--text-muted) !important; }
 
-  /* Show cards */
-  .show-card { background: rgba(0,0,0,.3) !important; border-color: rgba(0,200,83,.1) !important; }
-  .show-card:hover { border-color: rgba(0,200,83,.25) !important; }
+  /* ── Book cards ── */
+  .book-card {
+    background: #ffffff !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,.06) !important;
+  }
+  .book-card:hover { border-color: var(--green) !important; box-shadow: 0 8px 32px rgba(0,166,81,.1) !important; }
+  .book-card h3 { color: var(--black) !important; }
+  .book-spine.w { background: var(--green) !important; }
 
-  /* Leader card */
-  .leader-tag { background: rgba(0,200,83,.1) !important; color: var(--accent) !important; }
-  .leader-avatar { background: linear-gradient(135deg, var(--accent-dark), var(--accent)) !important; }
+  /* ── Leader card ── */
+  .leader-card {
+    background: #ffffff !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,.06) !important;
+  }
+  .leader-card h4 { color: var(--black) !important; }
+  .leader-card p { color: var(--text-muted) !important; }
+  .leader-tag {
+    background: var(--green-light) !important;
+    color: var(--green-dark) !important;
+  }
+  .leader-avatar { background: linear-gradient(135deg, var(--green-dark), var(--green)) !important; }
 
-  /* Contact */
-  .contact-icon { background: rgba(0,200,83,.1) !important; color: var(--accent) !important; }
+  /* ── Testimonials ── */
+  .testimonial-card {
+    background: #ffffff !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05) !important;
+  }
+  .testimonial-card p { color: var(--text-muted) !important; }
+  .testimonial-card strong { color: var(--black) !important; }
+  .stars { color: #f59e0b !important; }
 
-  /* Footer logo accent */
-  .footer-logo span { color: var(--accent) !important; }
+  /* ── Contact ── */
+  .contact-icon {
+    background: var(--green-light) !important;
+    color: var(--green) !important;
+  }
+  .contact-card {
+    background: #ffffff !important;
+    border: 1px solid var(--border) !important;
+  }
+  .contact-card h3, .contact-card strong { color: var(--black) !important; }
+  .contact-card p, .contact-card span { color: var(--text-muted) !important; }
 
-  /* Testimonial stars */
-  .stars { color: var(--accent) !important; }
+  /* ── Buttons ── */
+  .btn-primary {
+    background: var(--green) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 16px rgba(0,166,81,.3) !important;
+  }
+  .btn-primary:hover { background: var(--green-dark) !important; }
+  .btn-outline {
+    border: 2px solid var(--green) !important;
+    color: var(--green) !important;
+    background: transparent !important;
+  }
+  .btn-outline:hover { background: var(--green) !important; color: #fff !important; }
 
-  /* General inline style overrides for blue accent color */
-  [style*="background:#1a55b8"] { background: var(--accent-dark) !important; }
-  [style*="border-color:rgba(29,95,204"] { border-color: rgba(0,200,83,.5) !important; }
+  /* ── Partners ── */
+  .partner-card { background: #ffffff !important; border: 1px solid var(--border) !important; }
+  .partner-card:hover { border-color: var(--green) !important; }
 
+  /* ── Press ── */
+  .press-card { background: #ffffff !important; border: 1px solid var(--border) !important; }
+
+  /* ── Footer — keep dark ── */
+  footer { background: #0d1a0d !important; }
+  .footer-logo, .footer-tagline { color: #ffffff !important; }
+  .footer-nav a { color: rgba(255,255,255,.55) !important; }
+  .footer-nav a:hover { color: var(--green) !important; }
+  .footer-bottom { border-color: rgba(255,255,255,.08) !important; color: rgba(255,255,255,.35) !important; }
+
+  /* ── Video section — keep dark ── */
+  #video { background: #0d1a0d !important; }
+  #video h2 { color: #ffffff !important; }
+  #video p { color: rgba(255,255,255,.6) !important; }
+
+  /* ── Logo in nav ── */
+  .logo-text { color: var(--black) !important; }
+  .logo-sub { color: var(--green) !important; }
+
+  /* ── Inline style overrides for dark section backgrounds on light pages ── */
+  [style*="background:#070d07"],
+  [style*="background:#060c06"],
+  [style*="background:#080f08"] {
+    background: var(--bg-alt) !important;
+    color: var(--text) !important;
+  }
 
 </style>
 </head>
