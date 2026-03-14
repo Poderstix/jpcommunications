@@ -461,6 +461,95 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
   section{padding:4rem 1.5rem}
   .hip-items{gap:.5rem}
 }
+
+  /* ═══ GREEN/WHITE/BLACK COLOR THEME OVERRIDE ═══ */
+  :root {
+    --accent: #00c853;
+    --accent-light: #69f0ae;
+    --accent-dark: #00a844;
+    --bg-deep: #040904;
+    --bg-dark: #071209;
+    --bg-mid: #0a1a0a;
+  }
+
+  body { background: var(--bg-deep) !important; }
+
+  /* Backgrounds */
+  header, nav { background: linear-gradient(180deg, rgba(4,9,4,.97) 0%, rgba(4,9,4,0) 100%) !important; }
+  section { background: var(--bg-deep) !important; }
+  section:nth-child(even) { background: var(--bg-dark) !important; }
+  footer { background: #020602 !important; }
+
+  /* Hero */
+  .hero { background: linear-gradient(135deg, #030a03 0%, #071a0a 40%, #041008 70%, #030a03 100%) !important; }
+  .hero::before { background: radial-gradient(ellipse at 30% 50%, rgba(0,200,83,.08) 0%, transparent 60%) !important; }
+
+  /* Accent colors */
+  .hero-eyebrow-dot, .pulse-ring { background: var(--accent) !important; }
+  .hero-eyebrow { color: rgba(255,255,255,.55) !important; }
+
+  /* Platform cards */
+  .platform-top.ttw { background: linear-gradient(135deg, #0d3320, #071a0a) !important; }
+  .platform-top.mfr { background: linear-gradient(135deg, #1a4a15, #0a280a) !important; }
+  .platform-top.ats { background: linear-gradient(135deg, #1f4f10, #0d2a08) !important; }
+
+  /* Tags */
+  .tag { background: rgba(0,200,83,.1) !important; color: var(--accent) !important; border-color: rgba(0,200,83,.2) !important; }
+
+  /* Stats numbers */
+  .num { color: var(--accent) !important; }
+
+  /* Timeline */
+  .timeline-year { color: var(--accent-light) !important; }
+  .timeline-item::before { background: var(--accent) !important; }
+  .timeline-line { background: linear-gradient(to bottom, transparent, var(--accent), transparent) !important; }
+
+  /* Nav links */
+  nav a:hover { color: var(--accent) !important; }
+  .nav-cta { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; }
+  .nav-cta:hover { background: var(--accent-light) !important; }
+
+  /* Hero cards */
+  .hcard { background: rgba(0,200,83,.06) !important; border-color: rgba(0,200,83,.15) !important; }
+  .hcard:hover { background: rgba(0,200,83,.12) !important; border-color: rgba(0,200,83,.3) !important; }
+  .hcard-icon.blue, .hcard-icon.gold, .hcard-icon.green { background: rgba(0,200,83,.15) !important; color: var(--accent) !important; }
+  .hcard-arrow { color: var(--accent) !important; }
+
+  /* Buttons */
+  .btn-primary { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; }
+  .btn-primary:hover { background: var(--accent-light) !important; }
+  .btn-outline { border-color: var(--accent) !important; color: var(--accent) !important; }
+  .btn-outline:hover { background: var(--accent) !important; color: #000 !important; }
+
+  /* Section eyebrows */
+  .section-eyebrow, [style*="color:#4f8ef7"], [style*="color: #4f8ef7"] { color: var(--accent) !important; }
+
+  /* Cards and boxes */
+  .platform-card { background: rgba(0,200,83,.04) !important; border-color: rgba(0,200,83,.1) !important; }
+  .platform-card:hover { border-color: rgba(0,200,83,.3) !important; box-shadow: 0 0 30px rgba(0,200,83,.08) !important; }
+
+  /* Show cards */
+  .show-card { background: rgba(0,0,0,.3) !important; border-color: rgba(0,200,83,.1) !important; }
+  .show-card:hover { border-color: rgba(0,200,83,.25) !important; }
+
+  /* Leader card */
+  .leader-tag { background: rgba(0,200,83,.1) !important; color: var(--accent) !important; }
+  .leader-avatar { background: linear-gradient(135deg, var(--accent-dark), var(--accent)) !important; }
+
+  /* Contact */
+  .contact-icon { background: rgba(0,200,83,.1) !important; color: var(--accent) !important; }
+
+  /* Footer logo accent */
+  .footer-logo span { color: var(--accent) !important; }
+
+  /* Testimonial stars */
+  .stars { color: var(--accent) !important; }
+
+  /* General inline style overrides for blue accent color */
+  [style*="background:#1a55b8"] { background: var(--accent-dark) !important; }
+  [style*="border-color:rgba(29,95,204"] { border-color: rgba(0,200,83,.5) !important; }
+
+
 </style>
 </head>
 <body>
@@ -495,7 +584,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
   <div class="hero-bg"></div>
   <div class="hero-grid">
     <div>
-      <div class="hero-eyebrow">🏆 21 Years of Global Trade · Est. 2005</div>
+      <div class="hero-eyebrow">🌍 USA-Based · Global Reach · Est. 2005</div>
       <h1>Sourcing Solutions<br>for a <em>Digital World</em></h1>
       <p class="hero-sub">
         JPCInc.® has facilitated <strong>millions of global trade connections</strong> since 2005.
@@ -731,11 +820,11 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
 <!-- SERVICES -->
 
 <!-- VIDEO SECTION -->
-<section id="video" style="background:#080810;padding:5rem 0">
+<section id="video" style="background:#060c06;padding:5rem 0">
   <div style="max-width:1160px;margin:0 auto;padding:0 2rem">
     
     <div style="text-align:center;margin-bottom:3.5rem">
-      <div style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#4f8ef7;margin-bottom:1rem">Live Events · Fashion · Global Trade</div>
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#00c853;margin-bottom:1rem">Live Events · Fashion · Global Trade</div>
       <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);color:white;font-weight:800;margin:0 0 1rem">Apparel Textile Sourcing — The Experience</h2>
       <p style="color:rgba(255,255,255,.5);max-width:620px;margin:0 auto;font-size:1.05rem">From Toronto to Miami, Berlin to Montréal — 10 years of connecting the world's apparel industry. Watch the shows that defined North American textile sourcing.</p>
     </div>
@@ -758,7 +847,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
           <div style="color:white;font-weight:700;font-size:.95rem;margin-bottom:.3rem">Apparel Textile Sourcing Canada 2019</div>
           <div style="color:rgba(255,255,255,.45);font-size:.82rem;line-height:1.6">Official recap of one of Canada's premier sourcing events — connecting thousands of buyers, designers, and manufacturers from across North America and the world.</div>
           <div style="margin-top:.8rem;display:flex;gap:1.5rem">
-            <span style="color:#4f8ef7;font-size:.78rem;font-weight:700">🏆 20K+ Views</span>
+            <span style="color:#00c853;font-size:.78rem;font-weight:700">🏆 20K+ Views</span>
             <span style="color:rgba(255,255,255,.35);font-size:.78rem">📍 Toronto, Canada</span>
             <span style="color:rgba(255,255,255,.35);font-size:.78rem">📅 2019</span>
           </div>
@@ -795,19 +884,19 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
 
     <!-- Stats Bar -->
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08)">
-      <div style="background:#080810;padding:1.5rem;text-align:center">
+      <div style="background:#060c06;padding:1.5rem;text-align:center">
         <div style="font-size:1.8rem;font-weight:800;color:white">10</div>
         <div style="font-size:.72rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem">Years Running</div>
       </div>
-      <div style="background:#080810;padding:1.5rem;text-align:center">
+      <div style="background:#060c06;padding:1.5rem;text-align:center">
         <div style="font-size:1.8rem;font-weight:800;color:white">4</div>
         <div style="font-size:.72rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem">Cities</div>
       </div>
-      <div style="background:#080810;padding:1.5rem;text-align:center">
+      <div style="background:#060c06;padding:1.5rem;text-align:center">
         <div style="font-size:1.8rem;font-weight:800;color:white">2+</div>
         <div style="font-size:.72rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem">Continents</div>
       </div>
-      <div style="background:#080810;padding:1.5rem;text-align:center">
+      <div style="background:#060c06;padding:1.5rem;text-align:center">
         <div style="font-size:1.8rem;font-weight:800;color:white">1000s</div>
         <div style="font-size:.72rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem">Buyers Connected</div>
       </div>
@@ -815,10 +904,10 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
 
     <!-- Cities -->
     <div style="display:flex;gap:.8rem;justify-content:center;margin-top:2rem;flex-wrap:wrap">
-      <span style="background:rgba(79,142,247,.1);border:1px solid rgba(79,142,247,.25);color:#4f8ef7;font-size:.8rem;font-weight:600;padding:.45rem 1.1rem;border-radius:50px">📍 Toronto</span>
-      <span style="background:rgba(79,142,247,.1);border:1px solid rgba(79,142,247,.25);color:#4f8ef7;font-size:.8rem;font-weight:600;padding:.45rem 1.1rem;border-radius:50px">📍 Montréal</span>
-      <span style="background:rgba(79,142,247,.1);border:1px solid rgba(79,142,247,.25);color:#4f8ef7;font-size:.8rem;font-weight:600;padding:.45rem 1.1rem;border-radius:50px">📍 Miami</span>
-      <span style="background:rgba(79,142,247,.1);border:1px solid rgba(79,142,247,.25);color:#4f8ef7;font-size:.8rem;font-weight:600;padding:.45rem 1.1rem;border-radius:50px">📍 Berlin, Germany</span>
+      <span style="background:rgba(0,200,83,.1);border:1px solid rgba(0,200,83,.25);color:#00c853;font-size:.8rem;font-weight:600;padding:.45rem 1.1rem;border-radius:50px">📍 Toronto</span>
+      <span style="background:rgba(0,200,83,.1);border:1px solid rgba(0,200,83,.25);color:#00c853;font-size:.8rem;font-weight:600;padding:.45rem 1.1rem;border-radius:50px">📍 Montréal</span>
+      <span style="background:rgba(0,200,83,.1);border:1px solid rgba(0,200,83,.25);color:#00c853;font-size:.8rem;font-weight:600;padding:.45rem 1.1rem;border-radius:50px">📍 Miami</span>
+      <span style="background:rgba(0,200,83,.1);border:1px solid rgba(0,200,83,.25);color:#00c853;font-size:.8rem;font-weight:600;padding:.45rem 1.1rem;border-radius:50px">📍 Berlin, Germany</span>
       <span style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:.8rem;font-weight:600;padding:.45rem 1.1rem;border-radius:50px">Est. 2016 · 10 Years</span>
     </div>
 
