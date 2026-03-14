@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>JPCInc.® | Find it. Source it. Profit! | JP Communications Inc.</title>
+<meta name="description" content="JP Communications Inc. bridges global and domestic supply chain barriers with sourcing tools that help connect, manage and communicate with new and established trading partners. Since 2005."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#07152b;--blue:#0f2d5e;--accent:#1d5fcc;--gold:#c9920a;
+  --gold-light:#f5c842;--light:#f5f7fa;--white:#fff;--gray:#5a6a7e;
+  --border:#e2e8f0;--text:#1a2332;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#f1f5f9}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+
+/* ── NAV ── */
+#nav{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(7,21,43,0.96);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  transition:all .3s;
+}
+.nav-inner{
+  max-width:1280px;margin:0 auto;padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;height:68px;
+}
+.brand{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.brand-text{font-size:1.35rem;font-weight:800;color:var(--white);letter-spacing:-.01em}
+.brand-text span{color:var(--gold-light)}
+.brand-tag{font-size:.65rem;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.45);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:.25rem;list-style:none}
+.nav-links a{
+  color:rgba(255,255,255,.65);text-decoration:none;font-size:.85rem;
+  font-weight:500;padding:.45rem .8rem;border-radius:6px;
+  transition:all .2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,.08)}
+.nav-cta{
+  background:var(--gold);color:var(--navy)!important;
+  font-weight:700!important;padding:.45rem 1.1rem!important;
+  border-radius:6px;
+}
+.nav-cta:hover{background:var(--gold-light)!important;background:none}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem}
+.hamburger span{width:22px;height:2px;background:white;border-radius:2px;transition:.3s}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  background:linear-gradient(135deg,var(--navy) 0%,#0a1f45 45%,#0d2d6b 100%);
+  display:flex;align-items:center;padding:80px 2rem 0;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 75% 40%,rgba(29,95,204,.18) 0%,transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 70%,rgba(201,146,10,.06) 0%,transparent 60%);
+}
+.hero-grid{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(201,146,10,.12);border:1px solid rgba(201,146,10,.3);
+  color:var(--gold-light);font-size:.75rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.4rem 1rem;border-radius:100px;margin-bottom:1.5rem;
+}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold-light);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.6rem,5.5vw,4.2rem);
+  color:var(--white);line-height:1.1;margin-bottom:1.25rem;
+}
+.hero h1 em{font-style:normal;color:var(--gold-light)}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:2.5rem;max-width:520px}
+.hero-sub strong{color:rgba(255,255,255,.9)}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s;border:none;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,146,10,.35)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.07)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--blue);transform:translateY(-1px)}
+.btn-accent{background:var(--accent);color:var(--white)}
+.btn-accent:hover{background:#1a55b8;transform:translateY(-1px)}
+
+.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1)}
+.stat .num{font-size:2rem;font-weight:800;color:var(--white);line-height:1}
+.stat .label{font-size:.72rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem}
+
+.hero-cards{display:flex;flex-direction:column;gap:.85rem}
+.hcard{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:14px;padding:1.25rem 1.5rem;
+  display:flex;align-items:center;gap:1rem;
+  backdrop-filter:blur(8px);transition:all .3s;cursor:pointer;text-decoration:none;
+}
+.hcard:hover{background:rgba(255,255,255,.09);border-color:rgba(29,95,204,.5);transform:translateX(6px)}
+.hcard-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.hcard-icon.blue{background:rgba(29,95,204,.2)}
+.hcard-icon.gold{background:rgba(201,146,10,.15)}
+.hcard-icon.green{background:rgba(16,185,129,.15)}
+.hcard h4{color:var(--white);font-size:.95rem;font-weight:600;margin-bottom:.1rem}
+.hcard p{color:rgba(255,255,255,.5);font-size:.78rem;line-height:1.4}
+.hcard-arrow{color:rgba(255,255,255,.25);margin-left:auto;font-size:1.1rem;transition:.3s}
+.hcard:hover .hcard-arrow{color:var(--gold-light);transform:translateX(4px)}
+
+/* ── SECTIONS ── */
+section{padding:6rem 2rem}
+.container{max-width:1280px;margin:0 auto}
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.75rem);color:var(--navy);line-height:1.2;margin-bottom:1rem}
+.section-sub{font-size:1rem;color:var(--gray);line-height:1.85;max-width:580px}
+.section-header{margin-bottom:3.5rem}
+.section-header.center{text-align:center}
+.section-header.center .section-sub{margin:0 auto}
+.divider{width:48px;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:2px;margin:.75rem 0 1.25rem}
+.divider.center{margin:.75rem auto 1.25rem}
+
+/* ── ABOUT ── */
+#about{background:var(--light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-text p{color:var(--gray);line-height:1.9;margin-bottom:1.1rem;font-size:.98rem}
+.about-text p strong{color:var(--navy);font-weight:600}
+.hip-box{
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  border-radius:16px;padding:2rem;margin-top:1.5rem;
+}
+.hip-box h4{color:var(--gold-light);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
+.hip-items{display:flex;gap:1rem}
+.hip-item{flex:1;text-align:center}
+.hip-item .letter{font-size:2rem;font-weight:800;color:var(--white);font-family:'Playfair Display',serif}
+.hip-item .word{font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem}
+
+.about-right{display:flex;flex-direction:column;gap:1rem}
+.timeline-item{
+  display:flex;gap:1.25rem;padding:1.25rem;
+  background:var(--white);border-radius:14px;border:1px solid var(--border);
+}
+.timeline-year{
+  font-size:.9rem;font-weight:800;color:var(--accent);
+  white-space:nowrap;min-width:42px;padding-top:2px;
+}
+.timeline-text h5{font-size:.92rem;font-weight:600;color:var(--navy);margin-bottom:.2rem}
+.timeline-text p{font-size:.82rem;color:var(--gray);line-height:1.6}
+
+/* ── PLATFORMS ── */
+#platforms{background:var(--white)}
+.platforms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.platform-card{
+  border-radius:20px;overflow:hidden;border:1px solid var(--border);
+  transition:all .35s;background:var(--white);
+}
+.platform-card:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(0,0,0,.1);border-color:transparent}
+.platform-top{padding:2rem;position:relative;overflow:hidden}
+.platform-top.ttw{background:linear-gradient(135deg,#0a1f45,#1d5fcc)}
+.platform-top.mfr{background:linear-gradient(135deg,#0f2d5e,#1a4a9a)}
+.platform-top.ats{background:linear-gradient(135deg,#07152b,#0a2a5a)}
+.platform-badge{
+  position:absolute;top:1rem;right:1rem;
+  background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.3rem .7rem;border-radius:100px;border:1px solid rgba(255,255,255,.2);
+}
+.platform-icon{font-size:2.5rem;margin-bottom:1rem}
+.platform-top h3{color:var(--white);font-size:1.25rem;font-weight:700;margin-bottom:.4rem}
+.platform-top .platform-url{color:rgba(255,255,255,.55);font-size:.8rem}
+.platform-body{padding:1.5rem}
+.platform-body p{color:var(--gray);font-size:.88rem;line-height:1.75;margin-bottom:1.25rem}
+.platform-stats{display:flex;gap:1rem;margin-bottom:1.5rem}
+.pstat{flex:1;background:var(--light);border-radius:10px;padding:.75rem;text-align:center}
+.pstat .pnum{font-size:1.1rem;font-weight:800;color:var(--navy)}
+.pstat .plabel{font-size:.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:.05em}
+.platform-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem}
+.tag{background:rgba(29,95,204,.07);color:var(--accent);font-size:.72rem;font-weight:600;padding:.25rem .65rem;border-radius:100px}
+
+/* ── TRADE SHOWS ── */
+#tradeshows{background:var(--navy)}
+#tradeshows .section-label{color:var(--gold-light)}
+#tradeshows .section-title{color:var(--white)}
+#tradeshows .section-sub{color:rgba(255,255,255,.55)}
+.shows-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.show-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  border-radius:18px;padding:1.75rem;transition:all .3s;
+}
+.show-card:hover{background:rgba(255,255,255,.07);border-color:rgba(29,95,204,.4);transform:translateY(-4px)}
+.show-flag{font-size:2rem;margin-bottom:.75rem}
+.show-card h3{color:var(--white);font-size:1.05rem;font-weight:700;margin-bottom:.5rem}
+.show-card p{color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.7}
+.show-link{
+  display:inline-flex;align-items:center;gap:.35rem;
+  color:var(--gold-light);font-size:.8rem;font-weight:600;
+  text-decoration:none;margin-top:1rem;
+  transition:gap .2s;
+}
+.show-link:hover{gap:.6rem}
+
+/* ── SERVICES ── */
+#services{background:var(--light)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+.service-card{
+  background:var(--white);border-radius:16px;padding:1.75rem;
+  border:1px solid var(--border);transition:all .3s;
+}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08);border-color:var(--accent)}
+.service-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.1rem}
+.service-icon.blue{background:rgba(29,95,204,.1)}
+.service-icon.gold{background:rgba(201,146,10,.1)}
+.service-icon.green{background:rgba(16,185,129,.1)}
+.service-card h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+.service-card p{font-size:.88rem;color:var(--gray);line-height:1.75}
+
+/* ── BOOKS ── */
+#books{background:var(--white)}
+.books-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;max-width:900px}
+.book-card{
+  background:var(--white);border-radius:20px;overflow:hidden;
+  border:1px solid var(--border);transition:all .3s;display:flex;
+}
+.book-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
+.book-spine{
+  width:10px;flex-shrink:0;
+}
+.book-spine.w{background:linear-gradient(to bottom,#1d5fcc,#07152b)}
+.book-spine.r{background:linear-gradient(to bottom,#c9920a,#07152b)}
+.book-inner{padding:1.75rem;flex:1}
+.book-emoji{font-size:2.5rem;margin-bottom:.75rem}
+.book-inner h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.25rem}
+.book-author{font-size:.78rem;color:var(--accent);font-weight:500;margin-bottom:.75rem}
+.book-inner p{font-size:.875rem;color:var(--gray);line-height:1.75}
+
+/* ── TESTIMONIALS ── */
+#testimonials{background:var(--light)}
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.testi-card{
+  background:var(--white);border-radius:18px;padding:2rem;
+  border:1px solid var(--border);position:relative;
+}
+.testi-card::before{
+  content:'"';font-size:5rem;line-height:1;color:var(--accent);
+  opacity:.1;position:absolute;top:.5rem;left:1.25rem;
+  font-family:'Playfair Display',serif;
+}
+.testi-text{font-size:.95rem;color:var(--gray);line-height:1.85;margin-bottom:1.5rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.testi-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--navy));
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:700;font-size:.9rem;flex-shrink:0;
+}
+.testi-name{font-weight:700;font-size:.9rem;color:var(--navy)}
+.testi-role{font-size:.78rem;color:var(--gray)}
+
+/* ── LEADERSHIP ── */
+#leadership{background:var(--navy);padding:6rem 2rem}
+#leadership .section-label{color:var(--gold-light)}
+#leadership .section-title{color:var(--white)}
+#leadership .section-sub{color:rgba(255,255,255,.55)}
+.leader-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  border-radius:24px;padding:3rem;display:grid;grid-template-columns:auto 1fr;
+  gap:3rem;align-items:start;max-width:860px;
+}
+.leader-avatar{
+  width:110px;height:110px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.5rem;font-weight:800;color:white;flex-shrink:0;
+  font-family:'Playfair Display',serif;
+}
+.leader-name{font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:.2rem}
+.leader-title{color:var(--gold-light);font-size:.9rem;font-weight:500;margin-bottom:1.25rem}
+.leader-bio{color:rgba(255,255,255,.6);font-size:.92rem;line-height:1.9}
+.leader-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}
+.leader-tag{
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.6);
+  font-size:.72rem;font-weight:600;padding:.3rem .8rem;border-radius:100px;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+/* ── PRESS ── */
+#press{background:var(--light)}
+.press-intro{font-size:1rem;color:var(--gray);line-height:1.85;margin-bottom:2rem;max-width:660px}
+.press-cats{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.press-cat{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:10px;padding:.75rem 1.25rem;
+  font-weight:600;font-size:.88rem;color:var(--navy);
+  display:flex;align-items:center;gap:.5rem;
+}
+.press-cat-dot{width:8px;height:8px;border-radius:50%}
+
+/* ── CONTACT ── */
+#contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}
+.contact-info h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:1rem}
+.contact-info p{color:var(--gray);font-size:.95rem;line-height:1.85;margin-bottom:2rem}
+.contact-detail{display:flex;align-items:flex-start;gap:.9rem;padding:1rem 0;border-bottom:1px solid var(--border)}
+.contact-detail:last-child{border:none}
+.ci{
+  width:38px;height:38px;border-radius:10px;
+  background:rgba(29,95,204,.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;margin-top:2px;
+}
+.contact-detail strong{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gray);margin-bottom:.2rem}
+.contact-detail span,.contact-detail a{font-size:.95rem;color:var(--navy);font-weight:500;text-decoration:none}
+.contact-detail a:hover{color:var(--accent)}
+
+.contact-form{background:var(--light);border-radius:20px;padding:2.5rem}
+.contact-form h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.contact-form p{font-size:.875rem;color:var(--gray);margin-bottom:1.75rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+label{font-size:.8rem;font-weight:600;color:var(--navy)}
+input,textarea,select{
+  padding:.8rem 1rem;border:1.5px solid var(--border);
+  border-radius:10px;font-family:inherit;font-size:.9rem;
+  background:var(--white);transition:border-color .2s;color:var(--text);
+}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent)}
+textarea{resize:vertical;min-height:120px}
+
+/* ── PARTNERS ── */
+#partners{background:var(--navy);padding:4rem 2rem}
+#partners .section-title{color:var(--white);font-size:1.5rem}
+#partners .section-sub{color:rgba(255,255,255,.5)}
+.partners-text{text-align:center;max-width:600px;margin:0 auto 3rem}
+.partners-cta{text-align:center;margin-top:3rem}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
+.footer-main{
+  max-width:1280px;margin:0 auto;padding:4rem 2rem 2.5rem;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+}
+.footer-brand-col .footer-logo{font-size:1.25rem;font-weight:800;color:var(--white)}
+.footer-brand-col .footer-logo span{color:var(--gold-light)}
+.footer-brand-col .footer-tag{font-size:.8rem;color:rgba(255,255,255,.4);margin:.4rem 0 1rem;font-style:italic}
+.footer-brand-col p{font-size:.825rem;color:rgba(255,255,255,.4);line-height:1.8}
+.footer-col h5{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.footer-col ul a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-col ul a:hover{color:var(--white)}
+.footer-bottom{
+  max-width:1280px;margin:0 auto;padding:.75rem 2rem 1.5rem;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.3)}
+.footer-hip{font-size:.72rem;color:rgba(255,255,255,.2);font-style:italic}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;padding-bottom:4rem}
+  .hero-cards{display:grid;grid-template-columns:repeat(3,1fr)}
+  .platforms-grid{grid-template-columns:1fr 1fr}
+  .footer-main{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}.hamburger{display:flex}
+  .hero h1{font-size:2.4rem}
+  .hero-stats{gap:1.5rem}
+  .about-grid,.contact-grid,.leader-card{grid-template-columns:1fr}
+  .hero-cards,.platforms-grid,.shows-grid,.services-grid,.testi-grid,.books-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr}
+  section{padding:4rem 1.5rem}
+  .hip-items{gap:.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="brand">
+      <div>
+        <div class="brand-text">JPC<span>Inc.</span>®</div>
+        <div class="brand-tag">Find it. Source it. Profit!</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#platforms">Platforms</a></li>
+      <li><a href="#tradeshows">Trade Shows</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#leadership">Team</a></li>
+      <li><a href="#press">Press</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">Established 2005 · Commerce, California</div>
+      <h1>Sourcing Solutions<br>for a <em>Digital World</em></h1>
+      <p class="hero-sub">
+        JPCInc.® has facilitated <strong>millions of global trade connections</strong> since 2005.
+        Our B2B marketplaces power retailers, eCommerce sellers, Amazon &amp; eBay traders,
+        and sourcing professionals worldwide.
+      </p>
+      <div class="cta-row">
+        <a href="#platforms" class="btn btn-gold">Explore Our Platforms ↓</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">20+</div><div class="label">Years of Trade</div></div>
+        <div class="stat"><div class="num">1M+</div><div class="label">Products Listed</div></div>
+        <div class="stat"><div class="num">300K+</div><div class="label">Global Suppliers</div></div>
+        <div class="stat"><div class="num">190+</div><div class="label">Regions Covered</div></div>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <a href="#platforms" class="hcard">
+        <div class="hcard-icon blue">🛒</div>
+        <div>
+          <h4>TopTenWholesale.com</h4>
+          <p>America's #1 wholesale supplier platform</p>
+        </div>
+        <span class="hcard-arrow">→</span>
+      </a>
+      <a href="#platforms" class="hcard">
+        <div class="hcard-icon gold">🏭</div>
+        <div>
+          <h4>Manufacturer.com</h4>
+          <p>300,000+ global suppliers, 190+ regions</p>
+        </div>
+        <span class="hcard-arrow">→</span>
+      </a>
+      <a href="#tradeshows" class="hcard">
+        <div class="hcard-icon green">🧵</div>
+        <div>
+          <h4>Apparel Textile Sourcing</h4>
+          <p>Fastest-growing shows in USA, Canada, Europe</p>
+        </div>
+        <span class="hcard-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">About JPCInc.®</div>
+        <h2 class="section-title">Built on Honesty, Integrity &amp; Professionalism</h2>
+        <div class="divider"></div>
+        <p>JP Communications Inc. conducts all business based on the principle of <strong>HIP — Honesty, Integrity and Professionalism</strong>. Our primary goal as a leading online B2B global trade platform is to provide superior service to all our customers, wholesale buyers, and suppliers.</p>
+        <p>Founded in <strong>2005</strong> by CEO Jason Prescott and former CTO Joseph Preston, JPCInc. launched as a network of B2B global trade platforms. The flagship site, the wholesale search engine TopTenWholesale.com, launched that same year.</p>
+        <p>JPCInc. takes pride in its ability to solve industry problems. Our innovations enable stakeholders to connect globally for mutually profitable trade transactions, use free community resources for gaining industry knowledge, and access cutting-edge sourcing tools.</p>
+        <p>We strive to serve our customers' best interests while maintaining an exceptional reputation among industry stakeholders. Our forward-thinking philosophy and passion for helping others <em>"Find it. Source it. Profit!"</em> on the internet have served us well.</p>
+        <div class="hip-box">
+          <h4>Our Core Principles</h4>
+          <div class="hip-items">
+            <div class="hip-item"><div class="letter">H</div><div class="word">Honesty</div></div>
+            <div class="hip-item"><div class="letter">I</div><div class="word">Integrity</div></div>
+            <div class="hip-item"><div class="letter">P</div><div class="word">Professionalism</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="section-label" style="margin-bottom:1rem">Company Timeline</div>
+        <div class="timeline-item">
+          <div class="timeline-year">2005</div>
+          <div class="timeline-text"><h5>JPCInc. Founded</h5><p>Jason Prescott and Joseph Preston launch JP Communications Inc. and TopTenWholesale.com — the wholesale search engine for American buyers.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2009</div>
+          <div class="timeline-text"><h5>Manufacturer.com Acquired</h5><p>JPC purchases Manufacturer.com, headquartered in Hangzhou, China — expanding the company's reach to global factory-grade suppliers.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2009</div>
+          <div class="timeline-text"><h5>Trade Ambassador Named</h5><p>CEO Jason Prescott named Trade Ambassador by the Chinese government's Jiaozhou Investment Promotion Bureau.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2013</div>
+          <div class="timeline-text"><h5>Apparel Textile Sourcing Launched</h5><p>JPC enters the live events space with Apparel Textile Sourcing trade shows — now the fastest-growing shows in the USA, Canada, and Europe.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2005–<br>Now</div>
+          <div class="timeline-text"><h5>Industry-First Innovations</h5><p>First dedicated wholesale video hub. Supplier Pass™ verification system. Customized Sourcing RFQ. Logistics network with LA and New Jersey warehouses.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<section id="platforms">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Our Platforms</div>
+      <h2 class="section-title">Three Properties. One Ecosystem.</h2>
+      <div class="divider center"></div>
+      <p class="section-sub">Each platform serves a distinct segment of global B2B trade — together forming a complete sourcing and selling ecosystem for buyers and suppliers worldwide.</p>
+    </div>
+    <div class="platforms-grid">
+
+      <div class="platform-card">
+        <div class="platform-top ttw">
+          <div class="platform-badge">Since 2005</div>
+          <div class="platform-icon">🛒</div>
+          <h3>TopTenWholesale.com</h3>
+          <div class="platform-url">toptenwholesale.com</div>
+        </div>
+        <div class="platform-body">
+          <div class="platform-stats">
+            <div class="pstat"><div class="pnum">1M+</div><div class="plabel">Products</div></div>
+            <div class="pstat"><div class="pnum">#1</div><div class="plabel">US Platform</div></div>
+            <div class="pstat"><div class="pnum">2005</div><div class="plabel">Founded</div></div>
+          </div>
+          <p>The USA's largest B2B wholesale supplier platform — connecting buyers and suppliers since 2005. Over 1,000,000 products from wholesalers, liquidators, and importers available to online and offline resellers.</p>
+          <p>Our Supplier Pass™ patented verification offers the highest level of supplier trust on the internet. Ideal for retailers, eCommerce businesses, Amazon &amp; eBay sellers of all sizes.</p>
+          <div class="platform-tags">
+            <span class="tag">US Retailers</span>
+            <span class="tag">eCommerce</span>
+            <span class="tag">Amazon/eBay Sellers</span>
+            <span class="tag">Verified Suppliers</span>
+          </div>
+          <a href="https://www.toptenwholesale.com" target="_blank" class="btn btn-accent" style="width:100%;justify-content:center">Visit Platform →</a>
+        </div>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-top mfr">
+          <div class="platform-badge">Since 2009</div>
+          <div class="platform-icon">🏭</div>
+          <h3>Manufacturer.com</h3>
+          <div class="platform-url">manufacturer.com</div>
+        </div>
+        <div class="platform-body">
+          <div class="platform-stats">
+            <div class="pstat"><div class="pnum">300K+</div><div class="plabel">Suppliers</div></div>
+            <div class="pstat"><div class="pnum">190+</div><div class="plabel">Regions</div></div>
+            <div class="pstat"><div class="pnum">#1</div><div class="plabel">US Trade Platform</div></div>
+          </div>
+          <p>USA's first trade platform to offer sourcing professionals, entrepreneurs and traders trustworthy manufacturers from around the world. Over 300,000 suppliers from 190+ regions represented.</p>
+          <p>Buyers work directly with trade managers. Supplier Pass™ verification, premium showrooms, Pay Per Click advertising, and full logistics integration make global sourcing simple.</p>
+          <div class="platform-tags">
+            <span class="tag">Global Sourcing</span>
+            <span class="tag">Factory Direct</span>
+            <span class="tag">High MOQ</span>
+            <span class="tag">190+ Regions</span>
+          </div>
+          <a href="https://www.manufacturer.com" target="_blank" class="btn btn-accent" style="width:100%;justify-content:center">Visit Platform →</a>
+        </div>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-top ats">
+          <div class="platform-badge">USA · Canada · Europe</div>
+          <div class="platform-icon">🧵</div>
+          <h3>Apparel Textile Sourcing</h3>
+          <div class="platform-url">Live Trade Shows</div>
+        </div>
+        <div class="platform-body">
+          <div class="platform-stats">
+            <div class="pstat"><div class="pnum">3+</div><div class="plabel">Countries</div></div>
+            <div class="pstat"><div class="pnum">4</div><div class="plabel">Annual Shows</div></div>
+            <div class="pstat"><div class="pnum">🌍</div><div class="plabel">Global Reach</div></div>
+          </div>
+          <p>The fastest-growing apparel and textile sourcing trade shows in Canada, the USA, and Europe. ATS shows are a global industry destination providing a platform for the world's apparel and textile executives to connect, learn, and create opportunities.</p>
+          <p>International manufacturers, wholesalers, fabric suppliers, and fashion brands meet with buyers, sourcing directors, designers, merchandisers, and retail chains.</p>
+          <div class="platform-tags">
+            <span class="tag">USA · Canada</span>
+            <span class="tag">Europe</span>
+            <span class="tag">Apparel</span>
+            <span class="tag">Textiles &amp; Fashion</span>
+          </div>
+          <a href="#tradeshows" class="btn btn-accent" style="width:100%;justify-content:center">View Trade Shows →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRADE SHOWS -->
+<section id="tradeshows">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Live Events</div>
+      <h2 class="section-title">Apparel Textile Sourcing Shows</h2>
+      <div class="divider"></div>
+      <p class="section-sub">ATS connects international apparel, textile, fashion, and fabric manufacturers and wholesalers with buyers at four premier global events each year.</p>
+    </div>
+    <div class="shows-grid">
+      <div class="show-card">
+        <div class="show-flag">🇨🇦</div>
+        <h3>Apparel Textile Sourcing Canada</h3>
+        <p>Your premier destination to meet thousands of buyers from Canada, the USA, and the world. Meet apparel &amp; fabric buyers, sourcing directors, designers, merchandisers, retail chains, department stores, and more.</p>
+        <a href="https://www.appareltextilesourcing.com" target="_blank" class="show-link">View Show Site →</a>
+      </div>
+      <div class="show-card">
+        <div class="show-flag">🏙️</div>
+        <h3>Montréal Matchmaking Event</h3>
+        <p>An exclusive one-day-only matchmaking event in Montréal. Meet the best key international suppliers and manufacturers in an intimate hotel setting that gets real business done. Both Spring/Summer and Fall/Winter collections represented.</p>
+        <a href="https://www.appareltextilesourcing.com" target="_blank" class="show-link">View Show Site →</a>
+      </div>
+      <div class="show-card">
+        <div class="show-flag">🇺🇸</div>
+        <h3>Apparel Textile Sourcing Miami</h3>
+        <p>Brings international apparel, textile, and fashion manufacturers to North America to meet with buyers, sourcing professionals, designers, importers, distributors, business owners, and students looking to build careers in the industry.</p>
+        <a href="https://www.appareltextilesourcing.com" target="_blank" class="show-link">View Show Site →</a>
+      </div>
+      <div class="show-card">
+        <div class="show-flag">🇩🇪</div>
+        <h3>Apparel Textile Sourcing Germany</h3>
+        <p>Your premier European destination to meet thousands of buyers from Germany, the EU, and the world. Meet apparel &amp; fabric buyers, sourcing directors, designers, merchandisers, retail chains, and department stores from across Europe.</p>
+        <a href="https://www.appareltextilesourcing.com" target="_blank" class="show-link">View Show Site →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Services</div>
+      <h2 class="section-title">Complete Supply-Chain Solutions</h2>
+      <div class="divider"></div>
+      <p class="section-sub">JPCInc.® offers a diverse range of services designed to solve real industry problems and connect buyers with the right suppliers efficiently.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon blue">🛡️</div>
+        <h3>Supplier Pass™ Verification</h3>
+        <p>Premium members are suppliers and service providers who have successfully passed a Company Profile Verification (CPV) by an accredited third-party agency. The most trusted supplier verification system in B2B trade.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon gold">🎯</div>
+        <h3>Custom Sourcing</h3>
+        <p>Our specialists match buyers' detailed sourcing requirements with the right suppliers — efficiently and at scale. Post a detailed RFQ and connect with pre-qualified Premium and Verified suppliers. Save time. Save costs. Find quality.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon green">🚚</div>
+        <h3>Logistics &amp; Warehousing</h3>
+        <p>Warehousing facilities strategically located in Los Angeles and New Jersey — the most active ports in America. We also offer packaging, assembly, shrink wrapping, and other value-added services for eCommerce and manufacturing clients.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon blue">📊</div>
+        <h3>Advertising Solutions</h3>
+        <p>A wide range of advertising products enabling suppliers to reach thousands of wholesale buyers monthly. Pay Per Click, banner advertising, hot buy buttons, and seller preview video ads available across both platforms.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon gold">🎬</div>
+        <h3>Wholesale Video Hub</h3>
+        <p>JPCInc.® launched the first dedicated video hub where the wholesale community can view and post business videos. Suppliers showcase their factories, products, and capabilities to buyers worldwide — free of charge.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon green">🤝</div>
+        <h3>Trade Show Solutions</h3>
+        <p>Add trade shows to your company profile and connect with serious buyers attending events worldwide. Choose from hundreds of international and domestic trade shows — and let buyers know which ones you'll be attending.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section id="books">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Publications</div>
+      <h2 class="section-title">Industry Knowledge, Distilled</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Two essential guides for anyone building a wholesale or retail business — written by the people who built the industry's leading platforms.</p>
+    </div>
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-spine w"></div>
+        <div class="book-inner">
+          <div class="book-emoji">📦</div>
+          <h3>Wholesale 101</h3>
+          <div class="book-author">by Jason A. Prescott, CEO of TopTenWholesale.com &amp; Manufacturer.com</div>
+          <p>A breakthrough book offering newbies and veterans an inside guide to working with wholesalers, navigating trade shows, and sourcing strategies to foster long-lasting, profitable relationships. Quickly gain insider tribal knowledge on one of the hardest businesses to crack.</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-spine r"></div>
+        <div class="book-inner">
+          <div class="book-emoji">🏪</div>
+          <h3>Retail 101</h3>
+          <div class="book-author">by Nicole Leinbach Reyhle &amp; Jason A. Prescott</div>
+          <p>From the Founder of Retail Minded and the Independent Retailer Conference, and the CEO of TopTenWholesale.com and Manufacturer.com — a realistic, practical, and useful guide for brick-and-mortar and online merchants looking to compete successfully in today's retail world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">What Our Members Say</div>
+      <h2 class="section-title">Trusted by Businesses Worldwide</h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="testi-text">"BrandsGateway.com currently receives about 80% of our USA buyer traffic from TopTenWholesale.com. The platform has been instrumental in connecting us with serious American retail buyers."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MT</div>
+          <div>
+            <div class="testi-name">Michael Tekin</div>
+            <div class="testi-role">BrandsGateway.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-text">"I've been a Premium Member on Manufacturer.com for 2 years. When I joined I immediately started to receive interest from buyers and have developed many into new customers. I get good inquiries from my online showroom."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JX</div>
+          <div>
+            <div class="testi-name">Jordan Xiong</div>
+            <div class="testi-role">Global Imports Inc.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Leadership</div>
+      <h2 class="section-title">Meet the Founder</h2>
+      <div class="divider"></div>
+      <p class="section-sub">JP Communications Inc. was built by one of the most experienced figures in the global wholesale, manufacturing, and retail sourcing industry.</p>
+    </div>
+    <div class="leader-card">
+      <div class="leader-avatar">JP</div>
+      <div>
+        <div class="leader-name">Jason Aaron Prescott</div>
+        <div class="leader-title">Founder &amp; CEO — JP Communications Inc. (JPCInc.®)</div>
+        <p class="leader-bio">Jason Prescott founded JP Communications Inc. in 2005 with a vision to facilitate international trade at every level. He launched TopTenWholesale.com that same year, and in 2009 acquired Manufacturer.com from Hangzhou, China — expanding JPC's reach to global factory-grade suppliers. That year, Jason was also named Trade Ambassador by the Chinese government's Jiaozhou Investment Promotion Bureau.<br><br>He is the author of <em>Wholesale 101</em> and co-author of <em>Retail 101</em> with Nicole Leinbach Reyhle. He is also the founder of the Apparel Textile Sourcing trade shows — now the fastest-growing shows in the USA, Canada, and Europe — and founder of Alteca Home Builders, a residential construction company based in South Fork, Colorado.</p>
+        <div class="leader-tags">
+          <span class="leader-tag">B2B Trade</span>
+          <span class="leader-tag">Global Sourcing</span>
+          <span class="leader-tag">Trade Shows</span>
+          <span class="leader-tag">Published Author</span>
+          <span class="leader-tag">Trade Ambassador</span>
+          <span class="leader-tag">Real Estate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="press">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Press &amp; Media</div>
+      <h2 class="section-title">In the News</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="press-intro">Stay up to date with the global trade marketplace. Get connected and learn more about the latest news, achievements, and developments from TopTenWholesale.com, Manufacturer.com, and Apparel Textile Sourcing.</p>
+    <div class="press-cats">
+      <div class="press-cat"><div class="press-cat-dot" style="background:#1d5fcc"></div> TopTenWholesale News</div>
+      <div class="press-cat"><div class="press-cat-dot" style="background:#c9920a"></div> Manufacturer.com News</div>
+      <div class="press-cat"><div class="press-cat-dot" style="background:#10b981"></div> Apparel Textile Sourcing News</div>
+      <div class="press-cat"><div class="press-cat-dot" style="background:#8b5cf6"></div> Press Releases</div>
+    </div>
+    <a href="mailto:press@jpcommunications.com" class="btn btn-navy">Media Inquiries →</a>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="container">
+    <div class="partners-text">
+      <div class="section-label" style="color:rgba(255,255,255,.4);text-align:center">Strategic Partners</div>
+      <h2 class="section-title" style="font-size:1.6rem;margin-bottom:.75rem">Our Partners</h2>
+      <p class="section-sub" style="margin:0 auto">JP Communications Inc. has strategic partnerships with various companies which help us provide enhanced value to our members worldwide.</p>
+    </div>
+    <div class="partners-cta">
+      <a href="#contact" class="btn btn-gold">Become a Partner →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Contact Us</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>We'd Love to Hear From You</h3>
+        <p>We welcome your comments. Please feel free to contact us any time regarding our corporate goals, platforms, trade shows, or partnership opportunities. We value your feedback and endeavor to reply to all inquiries.</p>
+        <div class="contact-detail">
+          <div class="ci">📍</div>
+          <div><strong>Headquarters</strong><span>3414 Garfield Avenue<br>Commerce, CA 90040</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="ci">📞</div>
+          <div>
+            <strong>Phone</strong>
+            <span>Toll Free: <a href="tel:+18009286710">(800) 928-6710</a><br>Direct: <a href="tel:+12138021330">(213) 802-1330</a></span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="ci">📠</div>
+          <div><strong>Fax</strong><span>(213) 802-1331</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="ci">🌐</div>
+          <div>
+            <strong>Our Platforms</strong>
+            <span>
+              <a href="https://www.toptenwholesale.com" target="_blank">TopTenWholesale.com</a><br>
+              <a href="https://www.manufacturer.com" target="_blank">Manufacturer.com</a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+        <form onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Jason" required/>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Prescott" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@company.com" required/>
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" placeholder="Your Company Name"/>
+          </div>
+          <div class="form-group">
+            <label>I'm interested in...</label>
+            <select>
+              <option value="">Select a topic</option>
+              <option>TopTenWholesale.com — Buyer Membership</option>
+              <option>TopTenWholesale.com — Supplier Listing</option>
+              <option>Manufacturer.com — Buyer Sourcing</option>
+              <option>Manufacturer.com — Supplier Listing</option>
+              <option>Apparel Textile Sourcing — Exhibiting</option>
+              <option>Apparel Textile Sourcing — Attending</option>
+              <option>Logistics Services</option>
+              <option>Strategic Partnership</option>
+              <option>Press &amp; Media</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us about your business and how we can help..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-navy" style="width:100%;justify-content:center;padding:1rem">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand-col">
+      <div class="footer-logo">JPC<span>Inc.</span>®</div>
+      <div class="footer-tag">"Find it. Source it. Profit!"</div>
+      <p>JP Communications Inc. has been bridging global trade gaps since 2005 — connecting buyers and suppliers across every channel, from digital platforms to live trade shows worldwide.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Platforms</h5>
+      <ul>
+        <li><a href="https://www.toptenwholesale.com" target="_blank">TopTenWholesale.com</a></li>
+        <li><a href="https://www.manufacturer.com" target="_blank">Manufacturer.com</a></li>
+        <li><a href="#tradeshows">Apparel Textile Sourcing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">About JPCInc.</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#books">Publications</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#press">Press &amp; Media</a></li>
+        <li><a href="#partners">Partners</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+18009286710">Toll Free: (800) 928-6710</a></li>
+        <li><a href="tel:+12138021330">Direct: (213) 802-1330</a></li>
+        <li><a href="#contact">Send a Message</a></li>
+        <li><a href="mailto:info@jpcommunications.com">info@jpcommunications.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 JP Communications Inc. (JPCInc.®) — All rights reserved.</p>
+    <p class="footer-hip">Honesty · Integrity · Professionalism</p>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+function toggleMenu(){
+  const links = document.querySelector('.nav-links');
+  links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+  links.style.flexDirection = 'column';
+  links.style.position = 'absolute';
+  links.style.top = '68px';
+  links.style.left = '0';
+  links.style.right = '0';
+  links.style.background = 'rgba(7,21,43,.98)';
+  links.style.padding = '1rem 2rem 2rem';
+  links.style.gap = '.5rem';
+}
+
+// Nav active state
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+function updateNav(){
+  let current = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 90) current = s.id; });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+
+// Form submit
+function submitForm(e){
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '✓ Message Sent — We\'ll be in touch!';
+  btn.style.background = '#10b981';
+  btn.disabled = true;
+  setTimeout(()=>{
+    btn.innerHTML = orig;
+    btn.style.background = '';
+    btn.disabled = false;
+    e.target.reset();
+  }, 4000);
+}
+
+// Smooth close mobile menu on link click
+navLinks.forEach(a => a.addEventListener('click', () => {
+  const links = document.querySelector('.nav-links');
+  if(window.innerWidth <= 768) links.style.display = 'none';
+}));
+</script>
+</body>
+</html>
